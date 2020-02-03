@@ -7,7 +7,7 @@ try:
     fix_below_z = float(sys.argv[1])
     f_write = open('new_pos', 'w')
     with open('POSCAR') as f_read:
-        # read firt 9 lines and write them to a new file
+        # read first 9 lines and write them to a new file
         for line in itertools.islice(f_read, 9):
             f_write.write(line)
         # read the rest of the file., i.e. coordinates and freeze atoms
