@@ -2,7 +2,8 @@
 
 ###################################################################################################
 #                                                                                                                                                                                               
-#                 Purpose : To make a POSCAR file from .cell file format (using existing catalyst base,Ru or Pt)                                                                                                                        #                  Author : Mohammad Shamsus Saleheen, Department of Chemical Engineering,USC
+#                 Purpose : To make a POSCAR file from .cell file format (using existing catalyst base)
+#                  Author : Mohammad Shamsus Saleheen, Department of Chemical Engineering,USC
 #                    Date : 12-13-2013                                                                                                                                        
 #            Modification :                                                                                                                                       
 #  Reasons of Modification:                                                                                                                                        
@@ -19,7 +20,7 @@ sed -i '/%ENDBLOCK POSITIONS_FRAC/,$d' *.cell
 z=0
 nc=$(grep -w -c C *.cell)
 nh=$(grep -w -c H *.cell)
-pot_base="/home/work/ccei_biomass/users/saleheen/potpaw_pbe"
+pot_base="/work/ccei_biomass/users/saleheen/potpaw_pbe"
 
 mv CONTCAR* POSCAR
 
