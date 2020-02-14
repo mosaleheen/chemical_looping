@@ -25,11 +25,14 @@ try:
     surface_atoms=atoms[0]+atoms[1]          
     total_atoms= sum(atoms)                  
     adsorbate_atoms=total_atoms-surface_atoms
+    # get the absolute magnetization value from OSZICAR to set it for NUPDOWN
+    with open ('OSZICAR','r') as fr:
+        mag = abs(float([line.split()[-1] for line in fr if 'mag=' in line][-1]))
     # prepare the displacecar file
     with open(path+'/DISPLACECAR','w') as fw:
         for index in range(1, total_atoms+1):
             if index > surface_atoms:
-                fw.write('{:0.3f}   {:0.3f}   {:0.3f}\n'.format(0.005, 0.005, 0.005))
+                fw.write('{:0.3f}   {:0.3f}   {:0.3f}\n'.format(0.015, 0.015, 0.015))
             else:
                 fw.write('{:0.3f}   {:0.3f}   {:0.3f}\n'.format(0.000, 0.000, 0.000))
     # prepare the POSCAR from the optimized CONTCAR, this is just fixing all the surface atoms
@@ -58,6 +61,8 @@ try:
                 fw.write('IBRION= 3\n')
                 fw.write('ICHAIN= 1\n')
                 fw.write('POTIM= 0\n')
+                fw.write('NUPDOWN= {}\n'.format(mag))
+                fw.write('LORBIT= 11\n')
             # changing the nsw to 3N+1
             elif line.startswith('NSW'):
                 fw.write('NSW= {}\n'.format(int(3*adsorbate_atoms+1)))
