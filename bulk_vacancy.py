@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# calculating vacancy formation energy for the bulk metal oxides
 
 from pathlib import Path
 import os
