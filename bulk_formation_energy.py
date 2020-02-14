@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# calculating bulk crystal formation energy of metal oxides
+# from bulk metal and gaseous oxygen
 
 from math import gcd
 import numpy as np
