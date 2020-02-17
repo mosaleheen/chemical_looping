@@ -26,8 +26,8 @@ try:
     total_atoms= sum(atoms)                  
     adsorbate_atoms=total_atoms-surface_atoms
     # get the absolute magnetization value from OSZICAR to set it for NUPDOWN
-    with open ('OSZICAR','r') as fr:
-        mag = abs(float([line.split()[-1] for line in fr if 'mag=' in line][-1]))
+    #with open ('OSZICAR','r') as fr:
+    #    mag = abs(float([line.split()[-1] for line in fr if 'mag=' in line][-1]))
     # prepare the displacecar file
     with open(path+'/DISPLACECAR','w') as fw:
         for index in range(1, total_atoms+1):
@@ -61,8 +61,6 @@ try:
                 fw.write('IBRION= 3\n')
                 fw.write('ICHAIN= 1\n')
                 fw.write('POTIM= 0\n')
-                fw.write('NUPDOWN= {}\n'.format(mag))
-                fw.write('LORBIT= 11\n')
             # changing the nsw to 3N+1
             elif line.startswith('NSW'):
                 fw.write('NSW= {}\n'.format(int(3*adsorbate_atoms+1)))
