@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+# script to fix atoms in POSCAR file, have to provide
+# the atom coordinate to fix atoms below the provided one
+# since multiple atoms can share same z coordinates, the
+# easiest way is to copy the coordinates (x, y, and z) of the 
+# atom from POSCAR and use that as an argument to this script
 
 import sys
 import itertools
