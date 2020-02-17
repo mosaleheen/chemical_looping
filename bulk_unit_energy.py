@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# calculating unit bulk energy from bulk conventional/computed cells which
+# is mostly a supercell of the unit cell
 
 from math import gcd
 import linecache

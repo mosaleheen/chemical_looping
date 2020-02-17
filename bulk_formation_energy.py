@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# calculating bulk crystal formation energy of metal oxides
+# from bulk metal and gaseous oxygen
 
 from math import gcd
 import numpy as np
@@ -28,10 +30,5 @@ if os.path.exists(dir):
 
 bulk_form_energy = bulk_unit_energy - (x_metal/bulk_metal_atoms)*bulk_metal - x_oxygen*e_oxygen
 bulk_form_per_oxygen = bulk_form_energy / x_oxygen
-
-#print('Number of metals: {}, Number of oxygens: {}'.format(n_metal, n_oxygen))
-#print('Stoichimetric number of metal: {} and oxygen: {}'.format(x_metal, x_oxygen))
-#print('Bulk metal atoms: {}, Bulk metal energy: {}'.format(bulk_metal_atoms, bulk_metal))
-#print('Unit bulk energy: {}, Bulk formation energy: {}'.format(bulk_unit_energy, bulk_form_energy))
 
 print('Bulk formation energy per oxygen atom: {}'.format(bulk_form_per_oxygen))
