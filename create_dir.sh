@@ -1,5 +1,7 @@
 #!/bin/bash -x
-# for any files with .cell extension, create same named directory
+# for any files with .cell extension, create same named directory,
+# create poscar file from the .cell file, copy required input files,
+# modify the +u parameters of INCAR file, and set the job name. 
 for i in *.cell; 
 do nam=`echo $i | sed 's/.cell//g'`; 
 mkdir $nam; 
