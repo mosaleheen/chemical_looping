@@ -1,4 +1,7 @@
 #!/bin/bash -x
+# will create directories for submitting vacancy formation
+# calculations, have to provide the integer argument of how many
+# vacancy calculations needed.
 
 start=1
 stop=$1
