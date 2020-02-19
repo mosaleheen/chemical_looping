@@ -1,5 +1,9 @@
 #!/bin/bash -x
 
+# after the relaxed convergence calculation is sucessful, 
+# try increasing the energy and force based optimization 
+# criteria
+
 mkdir tight/;
 cp {INCAR,KPOINTS,POTCAR,job*,CONTCAR} tight/;
 mv tight/CONTCAR tight/POSCAR;
