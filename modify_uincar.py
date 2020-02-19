@@ -5,6 +5,8 @@
 #Mohammad Saleheen
 #CREATED: 02-03-2020 
 
+# add the u parameters for adsorbate atoms (0) to a surface INCAR
+# based on number of adsorbates in the poscar file
 
 
 
