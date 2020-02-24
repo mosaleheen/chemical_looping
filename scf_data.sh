@@ -1,4 +1,7 @@
 #/bin/bash -x
+# simple script to look for local minimas
+# by searching vibrational frequency directories
+# and add energy and frequencies to "scf_data" file
 
 if [ -d vib ]
 then
