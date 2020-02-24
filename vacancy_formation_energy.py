@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+# calculate surface vacancy formation energy using simple subtraction
+# scheme where vacancy calculations reside in the same directory named
+# 'vacancy_1' or 'vacancy_2'
 
 from pathlib import Path
 import os
