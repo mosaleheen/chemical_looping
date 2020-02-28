@@ -3,6 +3,10 @@
 import sys
 import itertools
 
+# script to create a vacancy in poscar,
+# needs the coordinate of the atom to be removed
+# as an argument
+
 # coordinate of oxygen atom to remove
 if len(sys.argv) > 2:
  x_oxygen = sys.argv[1:]
